@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "06e87987-6f15-4fd5-9133-5853f1573de7",
+		"name": "Wizard World",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18343754"
+	},
+	"item": [
+		{
+			"name": "/Elixirs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wizard-world-api.herokuapp.com/Elixirs",
+					"protocol": "https",
+					"host": [
+						"wizard-world-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Elixirs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/Elixirs/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wizard-world-api.herokuapp.com/Elixirs/0dd8d2fd-ac51-4bdd-b29c-0c8c571d45ca",
+					"protocol": "https",
+					"host": [
+						"wizard-world-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Elixirs",
+						"0dd8d2fd-ac51-4bdd-b29c-0c8c571d45ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/Houses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wizard-world-api.herokuapp.com/Houses",
+					"protocol": "https",
+					"host": [
+						"wizard-world-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Houses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/Houses/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wizard-world-api.herokuapp.com/Houses/805fd37a-65ae-4fe5-b336-d767b8b7c73a",
+					"protocol": "https",
+					"host": [
+						"wizard-world-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Houses",
+						"805fd37a-65ae-4fe5-b336-d767b8b7c73a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/Wizards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wizard-world-api.herokuapp.com/Wizards",
+					"protocol": "https",
+					"host": [
+						"wizard-world-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Wizards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/Wizards/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wizard-world-api.herokuapp.com/Wizards/03ca5597-ded5-419c-9620-31eb44a04457",
+					"protocol": "https",
+					"host": [
+						"wizard-world-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Wizards",
+						"03ca5597-ded5-419c-9620-31eb44a04457"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"feedbackType\": \"General\",\r\n  \"feedback\": \"FeedbackFeedbackFeedback\",\r\n  \"entityId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wizard-world-api.herokuapp.com/Feedback",
+					"protocol": "https",
+					"host": [
+						"wizard-world-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Feedback"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

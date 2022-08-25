@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "4efab1d1-989f-42e7-9d81-da237cb98097",
+		"name": "TheDog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18343754"
+	},
+	"item": [
+		{
+			"name": "Photo",
+			"item": [
+				{
+					"name": "some photo from some page",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thedogapi.com/v1/images/search?limit=10&page=356",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thedogapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"images",
+								"search"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "356"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "random photo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thedogapi.com/v1/images/search",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thedogapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"images",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Breeds",
+			"item": [
+				{
+					"name": "breeds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thedogapi.com/v1/breeds",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thedogapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"breeds"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "breeds search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thedogapi.com/v1/breeds/search?q=spa",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thedogapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"breeds",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "spa"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favourites",
+			"item": [
+				{
+					"name": "PostFavourites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Set Variable\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    //console.log('jsonData', jsonData.id)\r",
+									"    pm.environment.set(\"favID\", jsonData.id);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "live_ADn2fanR9GVJJHdQ97M0XsGkNIm7FLe7TAUPgFTPzWCgcyFNsHhtFvJzxMZIxB5C",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"image_id\": \"buxVXCo9V\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thedogapi.com/v1/favourites",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thedogapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"favourites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOllFavourites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "live_ADn2fanR9GVJJHdQ97M0XsGkNIm7FLe7TAUPgFTPzWCgcyFNsHhtFvJzxMZIxB5C",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thedogapi.com/v1/favourites",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thedogapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"favourites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSpecificFavourites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "live_ADn2fanR9GVJJHdQ97M0XsGkNIm7FLe7TAUPgFTPzWCgcyFNsHhtFvJzxMZIxB5C",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thedogapi.com/v1/favourites/{{favID}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thedogapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"favourites",
+								"{{favID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelFavourites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Ms Stat\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"SUCCESS\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "live_ADn2fanR9GVJJHdQ97M0XsGkNIm7FLe7TAUPgFTPzWCgcyFNsHhtFvJzxMZIxB5C",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thedogapi.com/v1/favourites/{{favID}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thedogapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"favourites",
+								"{{favID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSpecificDelFavourites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "live_WkUcbO6qWU9P4MGqNhqqCIyHhcsQf2TWkmEIxAY4siRZqjVEhEYNP2ApZ9xuKfyE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thedogapi.com/v1/favourites/{{favID}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thedogapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"favourites",
+								"{{favID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "18b20321-8b41-42b3-b90d-9ed006057857",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
